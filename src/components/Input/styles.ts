@@ -1,9 +1,14 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-export const Container = styled.div`
+interface ContainerProps {
+  isFocused: boolean;
+  isFilled: boolean;
+}
+
+export const Container = styled.div<ContainerProps>`
   background: #232129;
-  color: #666360;
   border-radius: 10px;
+  color: #666360;
   border: 2px solid #232129;
   padding: 16px;
   width: 100%;
@@ -13,6 +18,19 @@ export const Container = styled.div`
   & + div {
     margin-top: 8px;
   }
+
+  ${props =>
+    props.isFocused &&
+    css`
+      color: #ff9000;
+      border-color: #ff9000;
+    `}
+
+  ${props =>
+    props.isFilled &&
+    css`
+      color: #ff9000;
+    `}
 
   input {
     flex: 1;
@@ -26,5 +44,15 @@ export const Container = styled.div`
 
   svg {
     margin-right: 16px;
+  }
+
+  /* Cor de fundo do autocomplete */
+  input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px #232129 inset;
+  }
+
+  /* Cor do texto do autocomplete */
+  input:-webkit-autofill {
+    -webkit-text-fill-color: #f4ede8;
   }
 `;

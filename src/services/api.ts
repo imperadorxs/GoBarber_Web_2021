@@ -1,5 +1,5 @@
 import axios from 'axios';
 
-const api = axios.create({ baseURL: 'https://deploy.supercodigo.com.br' });
+const api = axios.create({ baseURL: 'https://gobarber.allansantiago.dev' });
 
 export default api;

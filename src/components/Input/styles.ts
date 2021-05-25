@@ -58,7 +58,7 @@ export const Container = styled.div<ContainerProps>`
 
   /* Cor de fundo do autocomplete */
   input:-webkit-autofill {
-    -webkit-box-shadow: 0 0 0 30px #232129 inset;
+    box-shadow: 0 0 0 30px #232129 inset;
   }
 
   /* Cor do texto do autocomplete */
